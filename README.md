@@ -21,8 +21,9 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 **Задача:** Бинарная классификация — предсказать, попадёт ли лошадь в топ-3 (целевая переменная `target = 1`) или нет (`target = 0`).
 
 **Датасет:** Исторические данные о скачках с 2017 по 2020 год из Гонконга (ипподромы Sha Tin и Happy Valley).
+Скачать датасет с Kaggle: https://www.kaggle.com/datasets/bogdandoicin/horse-racing-results-2017-2020
 
-**Целевая метрика:**
+**Целевая метрика:**пше
 - **ROC-AUC** — основная метрика, устойчива к дисбалансу классов (75% / 25%)
 - **F1-score** — для баланса precision и recall
 - **Precision / Recall** — для анализа ошибок модели
