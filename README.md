@@ -23,7 +23,7 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 **Датасет:** Исторические данные о скачках с 2017 по 2020 год из Гонконга (ипподромы Sha Tin и Happy Valley).
 Скачать датасет с Kaggle: https://www.kaggle.com/datasets/bogdandoicin/horse-racing-results-2017-2020
 
-**Целевая метрика:**пше
+**Целевая метрика:**
 - **ROC-AUC** — основная метрика, устойчива к дисбалансу классов (75% / 25%)
 - **F1-score** — для баланса precision и recall
 - **Precision / Recall** — для анализа ошибок модели
