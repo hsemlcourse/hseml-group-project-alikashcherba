@@ -1,5 +1,5 @@
 __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/kOqwghv0)
-# ML Project — Предсказать, попадёт ли лошадь в топ-3 на скачках
+# ML Project — Предсказание топ-3 лошади на скачках
 
 **Студент:** Щерба Алика Алексеевна
 
@@ -18,8 +18,6 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 
 ## Описание задачи
 
-<!-- Кратко опишите задачу: что предсказываем, какой датасет, метрика качества -->
-
 **Задача:** Бинарная классификация — предсказать, попадёт ли лошадь в топ-3 (целевая переменная `target = 1`) или нет (`target = 0`).
 
 **Датасет:** Исторические данные о скачках с 2017 по 2020 год из Гонконга (ипподромы Sha Tin и Happy Valley).
@@ -34,6 +32,10 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 Опишите структуру проекта, сохранив при этом верхнеуровневые папки. Можно добавить новые при необходимости.
 ```
 .
+├── .github
+│   ├── workflows 
+│       ├── lint.yaml 
+│       └── ci.yml
 ├── data
 │   ├── processed               # Очищенные и обработанные данные
 │   └── raw                     # Исходные файлы
@@ -72,10 +74,7 @@ source .venv/bin/activate   # Linux/macOS
 pip install -r requirements.txt
 ```
 # 4. Запустить Jupyter Notebook
-jupyter notebook notebooks/
-# Или выполнить последовательно:
-# - 01_eda.ipynb
-# - 02_baseline.ipynb
+jupyter notebook
 
 ## Данные
 - `data/raw/horse_racing_data.csv` — исходные файлы
@@ -92,12 +91,6 @@ jupyter notebook notebooks/
 | XGBoost                  | 0.781   | 0.391 | Чуть хуже Gradient Boosting                |
 | KNN                      | 0.565   | 0.238 | Слабое качество                            |
 
-Модель	ROC-AUC	F1	Примечание
-Gradient Boosting (final)	0.784	0.413 Лучший баланс Precision/Recall
-Logistic Regression	0.768	0.513	Высокий recall (0.835), низкая precision (0.370)
-Random Forest	0.765	0.134	Плохо находит топ-3
-XGBoost	0.781	0.391	Чуть хуже Gradient Boosting
-KNN	0.565	0.238	Слабое качество
 ## Отчёт
 
 Финальный отчёт: [`report/report.md`](report/report.md)__
