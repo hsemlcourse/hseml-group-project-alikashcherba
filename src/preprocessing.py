@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 import logging
@@ -123,7 +123,7 @@ def split_data(df: pd.DataFrame, test_size: float = 0.15, val_size: float = 0.15
     val_df = df.iloc[val_split_idx:test_split_idx]
     test_df = df.iloc[test_split_idx:]
 
-    logging.info(f"Разделение данных завершено:")
+    logging.info("Разделение данных завершено:")
     logging.info(
         f"  Train: {train_df.shape[0]} строк (с {train_df['date'].min().date()} по {train_df['date'].max().date()})")
     logging.info(
