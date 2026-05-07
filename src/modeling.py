@@ -7,9 +7,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, f1_score, precision_score, recall_score, classification_report
 import joblib
 import logging
-from imblearn.over_sampling import SMOTE
 from sklearn.pipeline import Pipeline
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+try:
+    from imblearn.over_sampling import SMOTE
+    SMOTE_AVAILABLE = True
+except ImportError:
+    SMOTE_AVAILABLE = False
+    SMOTE = None
 
 RANDOM_STATE = 42
 

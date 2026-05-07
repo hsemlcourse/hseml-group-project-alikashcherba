@@ -30,13 +30,16 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 
 
 ## Структура репозитория
-Опишите структуру проекта, сохранив при этом верхнеуровневые папки. Можно добавить новые при необходимости.
 ```
 .
 ├── .github
 │   ├── workflows 
 │       ├── lint.yaml 
 │       └── ci.yml
+├── app
+│   ├── main.py
+│   ├── model.py
+│   └── schemas.py
 ├── data
 │   ├── processed               # Очищенные и обработанные данные
 │   └── raw                     # Исходные файлы
@@ -60,7 +63,6 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 
 ## Запуск
 
-Этот блок замените способом запуска вашего сервиса.
 ```bash
 # 1. Клонировать репозиторий
 git clone <url>
@@ -73,14 +75,13 @@ source .venv/bin/activate   # Linux/macOS
 
 # 3. Установить зависимости
 pip install -r requirements.txt
-```
-# 4. Запустить Jupyter Notebook
+
+# 4. Запустить Jupyter Notebook 
 jupyter notebook
 
-## Данные
-- `data/raw/horse_racing_data.csv` — исходные файлы
-- `data/processed/` — предобработанные данные
-
+# 5. Запустить FastAPI сервер 
+python -m app.main
+```
 
 ## Результаты
 

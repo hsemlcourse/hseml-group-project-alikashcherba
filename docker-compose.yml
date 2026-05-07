@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  horse-racing-api:
+    build: .
+    container_name: horse-racing-predictor
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
