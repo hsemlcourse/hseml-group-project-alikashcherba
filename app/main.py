@@ -18,7 +18,7 @@ class HorseFeatures(BaseModel):
     starting_position: int
     jockey_weight: int
     country: str
-    trainername: str = Field(..., alias="trainer_name")  # поддерживаем оба варианта
+    trainername: str = Field(..., alias="trainer_name")
     odds: float
     racetype: str = Field(..., alias="race_type")
     horseid: int = Field(..., alias="horse_id")
@@ -27,7 +27,7 @@ class HorseFeatures(BaseModel):
     horse_age: float
 
     model_config = ConfigDict(
-        populate_by_name=True,  # позволяет использовать и alias, и оригинальное имя
+        populate_by_name=True,
         json_schema_extra={
             "example": {
                 "race_date": "2024-06-15",
@@ -109,7 +109,6 @@ async def predict(features: HorseFeatures):
         raise HTTPException(status_code=503, detail="Model not loaded")
 
     try:
-        # Преобразуем в словарь, используя имена полей (не alias)
         features_dict = features.model_dump(by_alias=False)
         race_date = features_dict.pop('race_date')
 

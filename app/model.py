@@ -23,7 +23,7 @@ class HorseRacingPredictor:
             print(f"✅ Model loaded successfully from {self.model_path}")
             return True
         except Exception as e:
-            print(f"❌ Error loading model: {e}")
+            print(f" Error loading model: {e}")
             self.is_loaded = False
             return False
 
@@ -31,24 +31,18 @@ class HorseRacingPredictor:
         """Предобработка для API запроса"""
         df = df.copy()
 
-        # Добавляем дату
         df['date'] = pd.to_datetime(race_date)
 
-        # Фиктивные колонки для clean_data
         df['race_time'] = 0
         df['path'] = 0
         df['fgrating'] = 0
 
-        # ✅ ВРЕМЕННАЯ колонка final_place (нужна для feature_engineer)
         df['final_place'] = 1
 
-        # Clean data
         df = clean_data(df)
 
-        # Feature engineering
         df = feature_engineer(df)
 
-        # Удаляем целевые/служебные колонки
         cols_to_drop = ['target', 'date', 'race_time', 'path', 'fgrating', 'final_place']
         df.drop(columns=[c for c in cols_to_drop if c in df.columns], inplace=True)
 
