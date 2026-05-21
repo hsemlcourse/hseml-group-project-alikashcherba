@@ -39,6 +39,7 @@ __[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-re
 ├── app
 │   ├── main.py
 │   ├── model.py
+│   ├── streamlit_app.py
 │   └── schemas.py
 ├── data
 │   ├── processed               # Очищенные и обработанные данные
