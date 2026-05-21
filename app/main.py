@@ -4,9 +4,10 @@ import uvicorn
 from contextlib import asynccontextmanager
 from datetime import date
 from pydantic import BaseModel, Field, ConfigDict
-
-from app.model import predictor
-
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from model import predictor
 
 class HorseFeatures(BaseModel):
     race_date: date = Field(..., description="Дата скачек (ГГГГ-ММ-ДД)")
@@ -122,4 +123,5 @@ async def predict(features: HorseFeatures):
 
 
 if __name__ == "__main__":
+    import uvicorn
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
