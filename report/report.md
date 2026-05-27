@@ -343,6 +343,8 @@ curl -X POST "http://localhost:8000/predict" \
 ![Пример предсказания](img_1.png)
 ![Скрин интерфейса 1](img_2.png)
 ![Скрин интерфейса 2](img_3.png)
+
+ссылка на видео - https://drive.google.com/file/d/1GZ9UKIu9ljsl_Gmyb_PRTrdvwiQdv4Rg/view?usp=sharing
 ---
 
 ## 8. Заключение и выводы
